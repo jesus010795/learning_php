@@ -43,6 +43,14 @@ De esta forma agregamos mas etiquetas php de apertura y cierre y dependiendo la 
 
 - **Lo que si se debe de hacer**
 
+Para facilitar la lectura y escritura hacemos uso de una sintaxis mas corta.
+
 ```
+<h2>Lo que si se debe de hacer</h2>
+<?php if(true): ?>
+    <p>La sentencia es true, Bienvenido</p>
+<?php else: ?>
+    <strong>La sentenciooa es false</strong>
+<?php endif ?>
 
 ```
