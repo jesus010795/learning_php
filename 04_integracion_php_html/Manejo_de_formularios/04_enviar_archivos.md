@@ -60,13 +60,13 @@ $_FILES['image'] = array(
 ```
 Vamos a desglosar cada uno de estos elementos:
 
-- `name`: El nombre original del archivo en el sistema del usuario. Por ejemplo, si el usuario sube un archivo llamado foto.jpg, $_FILES['image']['name'] será 'foto.jpg'.
+- **`name`**: El nombre original del archivo en el sistema del usuario. Por ejemplo, si el usuario sube un archivo llamado foto.jpg, $_FILES['image']['name'] será 'foto.jpg'.
 
-- `type`: El tipo MIME del archivo, que indica el tipo de contenido del archivo. Por ejemplo, para una imagen JPEG, $_FILES['image']['type'] podría ser 'image/jpeg'.
+- **`type`**: El tipo MIME del archivo, que indica el tipo de contenido del archivo. Por ejemplo, para una imagen JPEG, `$_FILES['image']['type']` podría ser 'image/jpeg'.
 
-- `tmp_name`: La ruta temporal donde el archivo se guarda en el servidor durante el proceso de carga. Este archivo temporal se mueve o copia a su ubicación definitiva mediante funciones como move_uploaded_file(). Por ejemplo, $_FILES['image']['tmp_name'] podría ser algo como /tmp/phpYzdqkD.
+- **`tmp_name`**: La ==ruta temporal== donde el archivo se guarda en el servidor durante el proceso de carga. Este archivo temporal se mueve o copia a su ubicación definitiva mediante funciones como move_uploaded_file(). Por ejemplo, `$_FILES['image']['tmp_name']` podría ser algo como /tmp/phpYzdqkD.
 
-- `error`: Un código de error asociado con la carga del archivo. Un valor de 0 indica que no hubo errores. Algunos otros valores comunes son:
+- **`error`**: Un código de error asociado con la carga del archivo. Un valor de 0 indica que no hubo errores. Algunos otros valores comunes son:
 
     - `UPLOAD_ERR_OK` (0): No hay error, el archivo se subió correctamente.
     - `UPLOAD_ERR_INI_SIZE` (1): El archivo excede la directiva upload_max_filesize en php.ini.
@@ -74,7 +74,7 @@ Vamos a desglosar cada uno de estos elementos:
     - `UPLOAD_ERR_PARTIAL` (3): El archivo fue subido parcialmente.
     - `UPLOAD_ERR_NO_FILE` (4): No se subió ningún archivo.
 
-- `size`: El tamaño del archivo en bytes. Por ejemplo, $_FILES['image']['size'] podría ser 204800 (que equivale a 200 KB).
+- **`size`**: El tamaño del archivo en bytes. Por ejemplo, $_FILES['image']['size'] podría ser 204800 (que equivale a 200 KB).
 
 ![](./imagenes/array_files.png)
 
@@ -146,3 +146,7 @@ Esta línea intenta mover la imagen cargada desde su ubicación temporal a la ru
 - El primer argumento `$imagen` especifica el origen (ubicación temporal) del archivo.
 
 - El segundo argumento `$ruta_a_subir` especifica la ruta de destino final donde se debe guardar la imagen.
+
+>En resumen, este fragmento de código recupera información sobre la imagen cargada, define su ruta de destino final e intenta mover la imagen a su ubicación permanente en el servidor o en local.
+
+> Si hemos subido una imagen y recargamos el navegador, esta imagen se estara resubiendo y sobreescribiendo, lo ideal es manejar el caso y evitar que se sobreescriba o pregguntar al ususario si quiere resubir y/o sobreescribir o subir con otro nombre.
