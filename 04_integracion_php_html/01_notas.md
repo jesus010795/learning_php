@@ -13,4 +13,3 @@ Es importante considerar los requisitos y características de tu proyecto al ele
 - **Sever Side Rendering (SSR)**: El servidor se encarga de procesar y generar la página web
 
 El renderizado del lado del servidor (SSR) es un enfoque en el cual el servidor genera una respuesta HTML completa y la envía al cliente. Esto significa que la página se renderiza completamente en el servidor antes de ser enviada al navegador del usuario. SSR es útil cuando se requiere un contenido dinámico que debe mostrarse en el primer renderizado de la página. Sin embargo, puede haber una mayor carga en el servidor debido a que se genera toda la página en cada solicitud
-

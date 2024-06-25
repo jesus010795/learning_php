@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+
+    <div class="container">
+        <div class="hero-contact">
+            <h3 class="hero-contact__title">Contactanos</h3>
+            <p class="hero-contact__work">Trabajemos juntos</p>
+        </div>
+    </div>
+
+    <section class="contact container">
+
+        <section class="contact__info">
+
+            <div class="info__cards">
+                <div class="cards__card">
+                    <i class="fa-solid fa-location-dot card__icon"></i>
+                    <p class="card__title">Direccion</p>
+                    <p class="card__description">Your address goes here</p>
+                </div>
+                <div class="cards__card">
+                    <i class="fa-solid fa-envelope card__icon"></i>
+                    <p class="card__title">Email</p>
+                    <p class="card__description">demo@example.com</p>
+                </div>
+                <div class="cards__card">
+                    <i class="fa-solid fa-phone card__icon"></i>
+                    <p class="card__title">Telefono</p>
+                    <p class="card__description">0123 456 789</p>
+                </div>
+            </div>
+        </section>
+
+        <p class="contact__description">Si te interesa una cotización rellena el siguiente formulario y nos pondremos en contacto.</p>
+
+        <form class="contact__form" action="server.php" method="post" enctype="multipart/form-data" id="form">
+
+            <input class="form__input" type="text" id="name" name="name" placeholder="Nombre">
+    
+            <input class="form__input" type="text" id="last_name" name="last_name" placeholder="Apellido">
+    
+            <input class="form__input" type="text" id="company" name="company" placeholder="Compania">
+    
+            <input class="form__input" type="email" name="emali" id="email" placeholder="Email">
+    
+            <input class="form__input" type="tel" name="telephone" id="telephone" placeholder="Tel.">
+    
+            <input class="form__input" type="text" name="city" id="city" placeholder="Ciudad">
+            
+            <input class="form__input" type="text" name="postal_code" id="postal_code" placeholder="Codigo Postal">
+    
+            <textarea class="form__input" name="comments" id="comments" form="form">Comentarios</textarea>
+    
+            <input class="form__submit btn" type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+</html>
