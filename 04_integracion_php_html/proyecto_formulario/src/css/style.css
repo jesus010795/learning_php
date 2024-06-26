@@ -4,6 +4,7 @@
 :root {
     --bg-input: #F9F5F3;
     --orange-text: #FF9100;
+    --brown-secondary: #321312;
 }
 * { 
     margin: 0; 
@@ -83,7 +84,7 @@ html{
 
 .contact__form{
     max-width: 40rem;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -113,4 +114,33 @@ html{
 
 .form__submit:hover{
     border: solid 1px gray;
+}
+
+.contact__map{
+    /* text-align: center; */
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.map {
+    border: none;
+    width: 100%;
+    height: 40rem;
+}
+
+
+/* FOOTER */
+
+.footer{
+    background-color: var(--brown-secondary);
+}
+
+.footer__logo{
+    color: white;
+}
+.logo__icon{
+    font-size: 3rem;
+}
+.logo__name{
+    font-size: 2.5rem;
 }
