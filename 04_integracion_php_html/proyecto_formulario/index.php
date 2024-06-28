@@ -1,3 +1,37 @@
+<?php
+
+function validation($name, $lastname, $company, $email, $telephone, $city, $postal_code, $comments) {
+
+return !empty($name) && !empty($lastname) && !empty($company) && !empty($email) && !empty($telephone) && !empty($city) && !empty($postal_code) && !empty($comments); 
+}
+
+$state = "";
+
+$name = $_POST['name'];
+$last_name = $_POST['last_name'];
+$company = $_POST['company'];
+$email = $_POST['email'];
+$telephone = $_POST['telephone'];
+$city = $_POST['city'];
+$postal_code = $_POST['postal_code'];
+$comments = $_POST['comments'];
+
+
+
+if (isset($_POST['form_submit'])) {
+    
+    // print_r(...$_POST);
+    if (validation($name, $last_name, $company, $email, $telephone, $city, $postal_code, $comments)){
+        $state = "succes";
+    } else {
+        $state = "danger";
+    }
+    echo "Formulario enviado";
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,14 +79,23 @@
 
         <p class="contact__description">Si te interesa una cotización rellena el siguiente formulario y nos pondremos en contacto.</p>
 
-        <div class="alert danger">
-            <span>Surgio un problema</span>
-        </div>
-        <div class="alert succes">
-            <span>Mensaje enviado con exito!</span>
-        </div>
+        
+        
+        
+        <?php if($state == "succes"):?>
+            <div class="alert succes">
+                <span>Mensaje enviado con exito!</span>
+            </div>
+        <?php endif; ?>
+        
+        <?php if($state == "danger"): ?>
+            <div class="alert danger">
+                <span>Surgio un problema</span>
+            </div>
+        <?php endif; ?>
+    
 
-        <form class="contact__form" action="server.php" method="post" enctype="multipart/form-data" id="form">
+        <form class="contact__form" action="./" method="post" enctype="multipart/form-data" id="form">
 
             <input class="form__input" type="text" id="name" name="name" placeholder="Nombre">
     
@@ -70,7 +113,7 @@
             
             <textarea class="form__input" name="comments" id="comments" form="form">Comentarios</textarea>
     
-            <input class="form__submit btn" type="submit" value="Enviar">
+            <input class="form__submit btn" name="form_submit" type="submit" value="Enviar">
         </form>
 
         <section class="contact__map">

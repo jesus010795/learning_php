@@ -207,7 +207,8 @@ html{
 }
 
 .footer__social{
-    
+    display: flex;
+    gap: 1.6rem;
 }
 .social__title{
     font-size: 2rem;
@@ -226,7 +227,7 @@ html{
 }
 
 .alert{
-    display: none;
+    /* display: none; */
     font-size: 1.8rem;
     padding: 2rem;
     border-radius: .8rem;
