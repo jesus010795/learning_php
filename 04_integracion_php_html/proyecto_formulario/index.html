@@ -45,6 +45,13 @@
 
         <p class="contact__description">Si te interesa una cotización rellena el siguiente formulario y nos pondremos en contacto.</p>
 
+        <div class="alert danger">
+            <span>Surgio un problema</span>
+        </div>
+        <div class="alert succes">
+            <span>Mensaje enviado con exito!</span>
+        </div>
+
         <form class="contact__form" action="server.php" method="post" enctype="multipart/form-data" id="form">
 
             <input class="form__input" type="text" id="name" name="name" placeholder="Nombre">
@@ -60,7 +67,7 @@
             <input class="form__input" type="text" name="city" id="city" placeholder="Ciudad">
             
             <input class="form__input" type="text" name="postal_code" id="postal_code" placeholder="Codigo Postal">
-    
+            
             <textarea class="form__input" name="comments" id="comments" form="form">Comentarios</textarea>
     
             <input class="form__submit btn" type="submit" value="Enviar">
@@ -71,20 +78,52 @@
         </section>
     </section>
     <footer class="footer">
-        <p class="footer__logo">
-            <i class="fa-solid fa-pen-ruler logo__icon"></i> <span class="logo__name">Papeleria</span>
-        </p>
-        <section class="footer__social">
-            <p class="social__title">Siguenos</p>
-            <ul class="social__list">
-                <li>
-                    <a href="">
-                        
-                    </a>
-                </li>
-            </ul>
+        <section class="wrap">
+            <div class="footer__wrapper container">
+                <div class="footer__company-description ">
+                    <p class="company__logo">
+                        <i class="fa-solid fa-pen-ruler logo__icon"></i> <span class="logo__name">Empresa</span>
+                    </p>
+                    <p class="company__some-details">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quaerat soluta aliquid consectetur ipsa. Ipsam animi at. Modi nobis minima sunt officiis soluta, cupiditate temporibus magni at quis deleniti veniam impedit eiusntium corporis similique.
+                    </p>
+                </div>
+                <section class="footer__contact">
+                    <p class="contact__title">Contactanos</p>
+                    <p class="contact__item">Direccion: <span class="contact__item-description">Your address goes here</span></p>
+                    <p class="contact__item">Email: <span class="contact__item-description">demo@example.com</span>
+                    </p>
+                    <p class="contact__item">Telefono: <span class="contact__item-description">0123 456 789</span>
+                    </p>
+                </section>
+                <section class="footer__social">
+                    <p class="social__title">Siguenos:</p>
+                    <ul class="social__list">
+                        <li class="social__item">
+                            <a href="" class="social__link">
+                                <i class="fa-brands fa-facebook social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="" class="social__link">
+                                <i class="fa-brands fa-tiktok social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="" class="social__link">
+                                <i class="fa-brands fa-instagram social__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            
         </section>
-
+        <section class="footer__copy">
+            <p>
+                &copy; 2024 Page made whit &hearts; by  <a href="https://github.com/jesus010795">JCD</a>
+            </p>
+        </section>
     </footer>
     
 </body>

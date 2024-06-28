@@ -5,16 +5,43 @@
     --bg-input: #F9F5F3;
     --orange-text: #FF9100;
     --brown-secondary: #321312;
+    --brow-terciary: #25100F;
 }
 * { 
     margin: 0; 
     padding: 0;
     box-sizing: border-box; 
 }
+ol, ul {
+	list-style: none;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+  }
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 html{
     font-size: 62.5%;
 }
+
+
 
 .hero-contact{
     margin-bottom: 2rem;
@@ -117,7 +144,7 @@ html{
 }
 
 .contact__map{
-    /* text-align: center; */
+    text-align: center;
     width: 100%;
     margin-bottom: 2rem;
 }
@@ -125,6 +152,7 @@ html{
 .map {
     border: none;
     width: 100%;
+    max-width: 600px;
     height: 40rem;
 }
 
@@ -132,15 +160,84 @@ html{
 /* FOOTER */
 
 .footer{
+    color: white;
+}
+.wrap{
     background-color: var(--brown-secondary);
+    padding-bottom: 2rem;
+}
+.footer__wrapper{
+    display: grid;
+
 }
 
-.footer__logo{
-    color: white;
+
+.company__logo{
+    margin-bottom: 2rem;
 }
 .logo__icon{
     font-size: 3rem;
 }
 .logo__name{
     font-size: 2.5rem;
+}
+
+.footer__company-description{
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    /* width: 100%; */
+    /* max-width: 33.33%; */
+}
+
+.footer__contact{
+    font-size: 1.6rem;
+}
+.contact__title{
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+}
+.contact__item{
+    margin-bottom: 1.6rem;
+    color: var(--orange-text);
+}
+.contact__item-description{
+    margin-bottom: 1.6rem;
+    color: white;
+}
+
+.footer__social{
+    
+}
+.social__title{
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+}
+.social__list{
+    color: white;
+    display: flex;
+    font-size: 2rem;
+    gap: 1rem;
+}
+.footer__copy{
+    color: white;
+    background-color: var(--brow-terciary);
+    text-align: center;
+}
+
+.alert{
+    display: none;
+    font-size: 1.8rem;
+    padding: 2rem;
+    border-radius: .8rem;
+    border: 1px solid var(--brow-terciary);
+    margin-bottom: 2rem;
+}
+.danger{
+    color: white;
+    background-color: var(--brown-secondary);
+}
+.succes{
+    background-color: var(--orange-text);
+    opacity: .8;
 }
