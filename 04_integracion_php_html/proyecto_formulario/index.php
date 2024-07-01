@@ -1,49 +1,38 @@
 <?php
 
 $data_form = [...$_POST];
-
-echo "<pre>";
-echo "Data \n";
-print_r($data);
-echo "</pre>";
-
 function validation($data) {
-
     foreach ($data as $key => $value) {
         if(empty($value)){
             return false;
         }
     }
-
     return true;
-    // return !empty($name) && !empty($lastname) && !empty($company) && !empty($email) && !empty($telephone) && !empty($city) && !empty($postal_code) && !empty($comments); 
 }
 
 $state = "";
 
-
-
-
-
 if (isset($_POST['form_submit'])) {
     
     if (validation($data_form)){
+
+        $name = $_POST['name'];
+        $last_name = $_POST['last_name'];
+        $company = $_POST['company'];
+        $email = $_POST['email'];
+        $telephone = $_POST['telephone'];
+        $city = $_POST['city'];
+        $postal_code = $_POST['postal_code'];
+        $comments = $_POST['comments'];
+
+        // Logica para mandar correo
+
         $state = "succes";
 
-        // $name = $_POST['name'];
-        // $last_name = $_POST['last_name'];
-        // $company = $_POST['company'];
-        // $email = $_POST['email'];
-        // $telephone = $_POST['telephone'];
-        // $city = $_POST['city'];
-        // $postal_code = $_POST['postal_code'];
-        // $comments = $_POST['comments'];
     } else {
         $state = "danger";
-        echo "Danger";
-
     }
-    echo "Formulario enviado";
+    // echo "Formulario enviado";
 }
 
 
