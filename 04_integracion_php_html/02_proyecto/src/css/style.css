@@ -1,0 +1,33 @@
+.hero{
+    color: white;
+}
+.hero__bg-img{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url("../img/pape_contact.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero__content{
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(155, 155, 155, .35);
+    
+}
+.hero__contact{
+    font-size: 3.8rem;
+    
+    /* display: block; */
+    /* margin: 0 auto; */
+}
+.hero__icon{
+    font-size: 8rem;
+}
