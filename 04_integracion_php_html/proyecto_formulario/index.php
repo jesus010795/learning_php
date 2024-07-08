@@ -1,4 +1,5 @@
 <?php
+require "mail.php";
 
 $data_form = [...$_POST];
 function validation($data) {
@@ -23,9 +24,12 @@ if (isset($_POST['form_submit'])) {
         $telephone = $_POST['telephone'];
         $city = $_POST['city'];
         $postal_code = $_POST['postal_code'];
+        $subject = $_POST['subject'];
         $comments = $_POST['comments'];
 
-        // Logica para mandar correo
+        // // Logica para mandar correo
+        $body = "Mensaje enviado por: $name $lastname <br> <br> Contenido: $comments";
+        sendMail($subject, $body, $email, $name, true);
 
         $state = "succes";
 
@@ -116,6 +120,9 @@ if (isset($_POST['form_submit'])) {
             <input class="form__input" type="text" name="city" id="city" placeholder="Ciudad">
             
             <input class="form__input" type="text" name="postal_code" id="postal_code" placeholder="Codigo Postal">
+            
+            <input class="form__input" type="text" name="subject" id="subject" placeholder="Asunto">
+
             
             <textarea class="form__input" name="comments" id="comments" form="form">Comentarios</textarea>
     
