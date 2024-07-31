@@ -32,7 +32,43 @@ Esta herramienta se instala en el proyecto, y nos ayuda a gestionar los diferent
 
 ## Creacion de clase Format
 
-CRearemos la clase que sera de utilidad para incrustar en nuestro helper 
+Crearemos la clase que sera de utilidad para incrustar en nuestro helper 
+
+Este ejemplo define una clase y una función estática dentro de ella.
+
+- Namespace Text:
+
+Esto define un espacio de nombres llamado "Text". Los espacios de nombres sirven para organizar el código y evitar conflictos de nombres cuando diferentes partes del código utilizan nombres similares.
+
+-  class Format
+
+Declara una clase llamada `Format`. En PHP, una clase es una plantilla para crear objetos y puede contener propiedades (variables) y métodos (funciones).
+
+- `public static function upperText($value)`
+
+    - Declara un método estático llamado `upperText` que toma un parámetro `$value`.
+
+    - `public`: Este método es accesible desde fuera de la clase.
+    - `static`: El método pertenece a la clase en sí, no a una instancia específica de la clase. Esto significa que puedes llamar a este método sin crear un objeto de la clase Format.
+
+- `return strtoupper($value);`
+
+    - Dentro del método `upperText`, se llama a la función incorporada de PHP `strtoupper`, que convierte una cadena de texto a mayúsculas.
+    - Luego, devuelve el valor convertido.
+
+```
+namespace Text;
+
+class Format
+{
+    public static function upperText($value)
+    {
+        return strtoupper($value);
+    }
+}
+```
+
+
 
 ## Composer dump
 
@@ -41,7 +77,7 @@ Despues de ejecutar el comando, se nos creara una carpeta llamada vendor, y con 
 Al revisar el archivo autoload_files, observaremos que se ha registrado nuestro helper y ya esta disponible para que sea utilizado.
 De igual forma el namespace estara registrado.
 
-## Probar nuestro helpper
+## Probar nuestra clase Format
 
 - Tenemos que importar nuestra configuracion de composer que hemos realizado, Esto se hace importando el archivo autoload, que sera el encargado de precargar toda nuestra configuracion. 
 
@@ -89,3 +125,59 @@ require __DIR__.'/vendor/autoload.php';
 
 echo upper("hola desde composer");
  ```
+
+## Resumen
+
+1. Todo inicia en nuestro archivo index.php, este index carga todo el sistema de autoload o autocarga de composer.
+2. Gracias a esta carga, composer entiende que por ahi hay una funcion llamad upper,
+3. Dicha funcion se encuentra en nuestro archivo helpers.php
+4. helpers hace uso de la clase que tenemos dentro de la carpeta src.
+5. Helpers no sabe que esta clase es un archivo "hermano", entonces hace uso del namespace Text
+    - Dicho namespace esta definido en nuestro archivo composer.json en donde indica que: Cuando escribas Text, haz referencia a la carpeta src
+    ```
+    "psr-4": {
+        "Text\\": "src/"
+    }
+    ```
+- Despues de la carpeta src tenemos la clase format, y esta es la forma comun de trabajar.
+
+## Creando otro metodo
+
+- Dentro de la clase crearemos otro metod simple muy similar al anterior pero convertiremos todo el string a minusculas
+    ```
+    public static function lowerText($value)
+    {
+        return strtolower($value);
+    }
+    ```
+- Nos dirigiremos a helper.php y de igual forma crearemos la funcion que llamara a este metodo y que nos facilitara la lectura y el manejo de este metodo.
+    ```
+    function lower($value)
+    {
+        return Text\Format::lowerText($value);
+    }
+    ```
+- Finalmente ejecutaremos este metodo dentro de nuestro index.
+    `echo lower("CODIGO EN MAYUSCULAS Y miNUSculas");`
+
+> Todo empieza en index, index busca la funcion en helpers, helpers busca la clase y finalmnte se ejecuta el metodo 
+
+## Agregando validaciones a nuestros metodos.
+
+Para mejorar nuestra funcionalidad, sera necesario validar si esta funcion existe y en caso de que si, que se ejecute y si ya existe dentro de sus sitema de carga entonces no lo volvera a cargar
+
+```
+if(! function_exists("upper"))
+{
+    function upper($value)
+    {
+        return Text\Format::upperText($value);
+    }
+}
+
+```
+
+
+> Todo componente y todo paquete tiene este ciclo de vida, nuestro proyecto vive dentro de la carpeta src, y esta carpeta y existe a lo largo del sistema gracias a la configuracion de composer
+
+> Nosotro pudiera crear estor archivos sin necesidad de composer y manadr a llamar cada funcionalidad y cada metodo, pero lo que composer nos ofrece es un sistema de carga automatica

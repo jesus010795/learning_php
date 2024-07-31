@@ -13,6 +13,8 @@ Las expresiones regulares en PHP son una herramienta poderosa para buscar, valid
 - En este ejemplo haremos un validacion sencilla de un password
 
 ```
+$psw = "123456a";
+
 '/^[0-9]{6-9}$/'
 
 var_dump(preg_match('/^[0-9]{6,9}$/', $psw));
