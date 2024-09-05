@@ -48,3 +48,5 @@ Nos dirigimos a la pagina de packagist, tecleamos el apquete que necesitamos, es
         }   
     }
     ```
+
+> Trabajando de esta forma garantizamos que la gestion de dependencias de paquetes sea la correcta, podemos depender de un unico paquete pero no sabemos si este paquete depende a su ves de estos paquetes, composer se encarga de todo esto, al final tendremos un sistema profesional que tiene todas sus dependencias correctamente instaladas.
