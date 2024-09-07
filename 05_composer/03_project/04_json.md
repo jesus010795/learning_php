@@ -31,3 +31,23 @@ JSON (JavaScript Object Notation) es un formato ligero para el intercambio de da
 
 #### Conclusión
 JSON es un formato esencial en el desarrollo de aplicaciones modernas debido a su simplicidad y capacidad para representar datos estructurados de manera eficiente. Es ampliamente utilizado para el intercambio de datos entre el cliente y el servidor en aplicaciones web.
+
+# composer.lock
+
+
+El archivo composer.lock se genera automáticamente cuando ejecutas composer install o composer update y contiene una instantánea precisa de las versiones exactas de las dependencias que fueron instaladas. Este archivo asegura que todas las personas que trabajen en el proyecto utilicen las mismas versiones de las dependencias, garantizando así la consistencia y estabilidad del entorno de desarrollo y producción.
+
+Funcionalidades del composer.lock
+
+- Consistencia de Dependencias:
+
+    Asegura que todos los desarrolladores utilicen las mismas versiones de las dependencias especificadas.
+    Mantiene la coherencia entre los entornos de desarrollo, pruebas y producción.
+
+- Rendimiento Mejorado:
+
+    Al usar composer install, Composer lee el archivo composer.lock y sabe exactamente qué versiones de las dependencias instalar, lo que hace que el proceso sea más rápido ya que no necesita resolver versiones nuevamente.
+
+- Determinismo en la Instalación:
+
+    Garantiza que las mismas versiones de las dependencias se instalen cada vez, evitando problemas de compatibilidad y errores inesperados causados por cambios en las dependencias.
