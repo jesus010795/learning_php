@@ -10,7 +10,7 @@ Cuando trabajamos con composer todo gira entorno al archivo principal llamado co
 
 `composer init`
 
-Al ejecutar se nos dara la bienvenida al configurador de composer, la primera pregunta siendo el nombre del provedor y el nombre del paquete, automaticamente detecta nuestra configuracion git y nuestra carpeta. Si estamos de acuerdo unicamente apretamos enter.
+Al ejecutar se nos dara la bienvenida al configurador de composer, la primera pregunta siendo ==el nombre del provedor== y ==el nombre del paquete==, automaticamente detecta nuestra configuracion git y nuestra carpeta. Si estamos de acuerdo unicamente apretamos enter.
 
 ![primer pregunta](../../images/01composer.png)
 
