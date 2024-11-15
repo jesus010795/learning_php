@@ -1,0 +1,11 @@
+.header {
+    width: 70%;
+    background-color: fuchsia;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+}
