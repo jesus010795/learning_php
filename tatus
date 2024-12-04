@@ -1,0 +1,263 @@
+[33mcommit 1f3d518a8d8715e138ebf131e28fe5f39a36fb9c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Thu Nov 14 22:17:38 2024 -0600
+
+    Cookies y sesiones
+
+[33mcommit e6c5b5b2235c1c19daf1bcdadd7356e991ae5bf9[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Nov 11 23:08:36 2024 -0600
+
+    Declaraciones: escalar, devolucion
+
+[33mcommit 9e024c60b22288e544c18aaa4266887bdbbe7975[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Nov 11 21:38:12 2024 -0600
+
+    Arrow functions y funciones anonimas
+
+[33mcommit 378676a2e2c5167b19bb59b716dd16f598656fe8[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Nov 4 22:00:56 2024 -0600
+
+    Redirecciones y parametros por referencia
+
+[33mcommit 968bb8d3761efc094ed5f8d3c60ccb1c99cdb7af[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sun Nov 3 18:03:19 2024 -0600
+
+    Iniciacion a entornos y funciones avanzadas
+
+[33mcommit 924dad04f0680adcd3dcf744abe228eb3af80b3c[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Sep 23 22:33:59 2024 -0600
+
+    POO: Fundamentos
+
+[33mcommit 43a0e8c32b64fbd7275d16b8703c5d7b9452eebf[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sun Sep 22 17:47:02 2024 -0600
+
+    Array: Funciones para manipular arrays
+
+[33mcommit 1a869453cd31857cfc2df587e7c88fbc23f80b7b[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Thu Sep 19 23:07:59 2024 -0600
+
+    Arrays: Iteracion de arrays
+
+[33mcommit d10d2c7c285e2aff3740542ebfb8b904172f00b0[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Wed Sep 18 21:19:53 2024 -0600
+
+    Closures
+
+[33mcommit ba81f95494718d33fa8e9e53eb06a0380883598a[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Sep 16 14:31:22 2024 -0600
+
+    Funciones
+
+[33mcommit bbd971fbd47e0ee5c6f19d16607bbbe675f15561[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Thu Sep 12 23:04:30 2024 -0600
+
+    PhpUnit: first steps
+
+[33mcommit a5901ed2d6ce09d219ce09fcb4e7614362e5b768[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sat Sep 7 14:06:45 2024 -0600
+
+    composer.lock
+
+[33mcommit 40d36529ed9f47bcb715beeccde6b2cdec1027d9[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sat Sep 7 13:43:26 2024 -0600
+
+    Composer: autoload
+
+[33mcommit be684d91832b0ab9224684d6b6d4a407a77b988a[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Wed Sep 4 22:57:07 2024 -0600
+
+    composer init, JSON
+
+[33mcommit 2cb9382b91f2d8b034e61e1b0c2bf0e357de644c[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Sep 3 23:07:39 2024 -0600
+
+    package management
+
+[33mcommit 3171d565aa9af88bc5eaf0785e84f38e63594ce1[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Jul 30 23:18:58 2024 -0600
+
+    Creacion de primer paquete
+
+[33mcommit fb298810c043c1f12ee21baa3f9a2e6e35fd72c2[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sun Jul 28 23:45:14 2024 -0600
+
+    Configuracion de composer
+
+[33mcommit 6e7efdaf9fa81ee0e0029de83e2415c6e0f8b439[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sun Jul 21 21:56:21 2024 -0600
+
+    Expresiones regulares basico
+
+[33mcommit 5dc07122b76c475d4867390b14fc1d108203ca8d[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Thu Jul 18 22:20:44 2024 -0600
+
+    Manejo de strings
+
+[33mcommit b9d4527396c87a93eeebbc4196166df1743e67bb[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sun Jul 7 23:35:39 2024 -0600
+
+    Mike: Form layout, form validate
+
+[33mcommit 7ba6fa18ec6cf018e5d4c9ee53205f0177ef463a[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Jul 2 17:56:47 2024 -0600
+
+    Mike project
+
+[33mcommit 9858d69414d4e33a8483fc07c7eded4f85dd8f77[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Jul 1 17:55:18 2024 -0600
+
+    Composer installation
+
+[33mcommit 1deca3f0e2628ea95a1b69030690afb13b177217[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Mon Jul 1 17:18:41 2024 -0600
+
+    Validation with foreach
+
+[33mcommit 71b0bf394f28c10f4cf933449a15793e5dbf2c0a[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Fri Jun 28 17:32:52 2024 -0600
+
+    Project: Form validate
+
+[33mcommit 1f32bd4c65e2be9d553cab5f1dc115565fd9d021[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Fri Jun 28 08:42:16 2024 -0600
+
+    Project: Footer layout
+
+[33mcommit b1eac6f4d8cce3cac44507ae0226f767426c43af[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Jun 25 23:56:25 2024 -0600
+
+    Project: Starting footer
+
+[33mcommit 44d663662964bbaeabc5b36c8584a635727daed0[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Jun 25 17:46:09 2024 -0600
+
+    Final project: form layout
+
+[33mcommit 394224a901e500d93d5335c9bc6fec5792d5d42d[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Fri Jun 14 20:02:34 2024 -0600
+
+    Validando datos
+
+[33mcommit 70a5c72877ae599fdabc6ac9816c168d0b38352f[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Thu Jun 13 23:53:57 2024 -0600
+
+    Sanitizacion
+
+[33mcommit fd89dbd4b47c65ee43abc6903a49b550e8082dbd[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Jun 11 23:25:00 2024 -0600
+
+    Validacion de formularios
+
+[33mcommit c59eefdb00a854eb10be941dc1971e163ab4c454[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Tue Jun 11 20:29:05 2024 -0600
+
+    Subir multiples archivos
+
+[33mcommit 77cf2762204205254d7c18d4a9f8700cef09f047[m
+Author: jesus <jcd010795@gmail.com>
+Date:   Sun Jun 9 11:42:53 2024 -0600
+
+    Manejo de formularios: Almacenar imagenes/archivos
+
+[33mcommit c44f19793e24099cb7ac1acf07baf4847b0b9513[m
+Author: jesus <bep010795@gmail.com>
+Date:   Wed Jun 5 23:32:35 2024 -0600
+
+    Manejo de formularios
+
+[33mcommit e422f7b9d491ea4400c7d1fb6b55ff57836f7681[m
+Author: jesus <bep010795@gmail.com>
+Date:   Fri May 31 21:19:03 2024 -0600
+
+    Ejemplo de refactorizacion
+
+[33mcommit 79e376b6b01ec3b007cee721febbb9156cf119b0[m
+Author: jesus <bep010795@gmail.com>
+Date:   Mon May 27 21:40:38 2024 -0600
+
+    Codigo espagueti y su refactorizacion
+
+[33mcommit 19943c3ffe22cd56110fb8374988591ea583b338[m
+Author: jesus <bep010795@gmail.com>
+Date:   Sun May 26 18:46:55 2024 -0600
+
+    Variables de php a javascript
+
+[33mcommit fe4a07996f00d909ade2911586e117273a8d7245[m
+Author: jesus <bep010795@gmail.com>
+Date:   Sun May 26 17:34:47 2024 -0600
+
+    Ciclos
+
+[33mcommit c71e28fbf0494818c825e049ef38365ad378c942[m
+Author: jesus <bep010795@gmail.com>
+Date:   Sat May 25 15:17:40 2024 -0600
+
+    Condicionales
+
+[33mcommit 87705ac7348f006cd4b126847102b2c0a184f74d[m
+Author: jesus <bep010795@gmail.com>
+Date:   Sat May 25 14:17:29 2024 -0600
+
+    Php como preprocesador
+
+[33mcommit b23a1560cb7fabc5a95367608e7a3791128cdba5[m
+Author: jesus <bep010795@gmail.com>
+Date:   Tue May 21 17:56:00 2024 -0600
+
+    Primeros pasos, integracion html y php
+
+[33mcommit 53daf583059c3ecce2b19984c22109b9bd98c3ed[m
+Author: jesus <bep010795@gmail.com>
+Date:   Mon May 20 22:32:00 2024 -0600
+
+    Reto descuentos
+
+[33mcommit be60b478a06a99ed461c23b5b5416c975724ed0e[m
+Author: jesus <bep010795@gmail.com>
+Date:   Fri May 17 14:40:49 2024 -0600
+
+    Microproyecto
+
+[33mcommit 0026f4a9b1921b49cd7017a125ebadae55cbc85b[m
+Author: jesus <bep010795@gmail.com>
+Date:   Fri May 17 10:08:40 2024 -0600
+
+    Functions
+
+[33mcommit d4825392cc44e8a44587ab6666a7dd219f8fb38e[m
+Author: jesus <bep010795@gmail.com>
+Date:   Fri May 17 09:05:36 2024 -0600
+
+    first commit
