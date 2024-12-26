@@ -13,15 +13,13 @@ class IncomesController
     public function store($data){
 
         $connection = Connection::get_instance()->get_database_instance();
-        $connection->query(
+        $stmt = $connection->prepare(
             "INSERT INTO incomes (payment_method, type, date, amount, description)
-                VALUES(
-                    {$data['payment_method']},
-                    {$data['type']},
-                    '{$data['date']}',
-                    {$data['amount']},
-                    '{$data['description']}'
-            );");
+            VALUES (:payment_method, :type, :date, :amount, :description)"
+            );
+
+        $stmt->execute($data);    
+        
     }
     public function show(){}
 

@@ -2,16 +2,27 @@
 
 namespace App\Controllers;
 
+use Database\PDO\Connection;
+
 class WithdrawalsController
 {
-    public function index(){}
     public function create(){}
-    public function store(){}
-    public function show(){}
-    public function edit(){}
-    public function update(){}
-    public function destroy(){}
+    
+    public function store($data) {
+        $connection = Connection::get_instance()->get_database_instance();
+        $stmt = $connection->prepare(
+            "INSERT INTO withdrawals (payment_method, type, date, amount, description)
+            VALUES ( :payment_method, :type, :date, :amount, :description)");
+
+$stmt->execute($data);    
 }
+}
+
+// public function index(){}
+// public function show(){}
+// public function edit(){}
+// public function update(){}
+// public function destroy(){}
 
 // Los 7 métodos que suelen tener los controladores:
 // index: muestra la lista de todos los recursos.
