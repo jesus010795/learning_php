@@ -9,5 +9,10 @@
             "email": "jcd010795@gmail.com"
         }
     ],
+    "autoload":{
+        "psr-4":{
+            "Database": "database/"
+        }
+    },
     "require": {}
 }
