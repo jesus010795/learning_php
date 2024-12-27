@@ -30,16 +30,22 @@ require ("vendor/autoload.php");
 // ]);
 
 
-$withdrawal_controler = new WithdrawalsController();
-$withdrawal_controler->index();
+// $withdrawal_controler = new WithdrawalsController();
+// $withdrawal_controler->index();
 
 // $withdrawal_controler = new WithdrawalsController();
-// $withdrawal_controler->show(1);
+// $withdrawal_controler->update(3);
 
 $incomes_controller = new IncomesController();
 // $incomes_controller->index();
+// $incomes_controller->destroy(4);
+// $incomes_controller->update([
+//     "payment_method" => PaymentMethodTypeEnum::BankAccount->value,
+//      "type" => IncomeTypeEnum::Salary->value,
+//      "amount" => 1860,
+//      "description" => "Horas extras",
+// ], 5);
 
-$incomes_controller->destroy(3);
-
+$incomes_controller->show(5);
 
 ?>

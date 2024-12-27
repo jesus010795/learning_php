@@ -47,29 +47,94 @@ class IncomesController
         $stmt->execute($data);    
         
     }
-    public function show(){}
+    public function show($id){
+        try {
+            $stmt = $this->connection->prepare(
+                "SELECT * FROM incomes WHERE id=:id"
+            );
+    
+            $stmt->execute([
+                ":id" => $id
+            ]);
+    
+            $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+            // print_r($result);
+            return $result;
+        } catch (\Throwable $th) {
+            echo "Ha ocurrido un error: " . $th->getMessage() . "\n";
+        }
+    }
 
     public function edit(){}
 
-    public function update(){}
+    public function update($data, $id ){
+        try {
+            $this->connection->beginTransaction();
+            $stmt = $this->connection->prepare(
+                "UPDATE incomes 
+                SET 
+                payment_method = :payment_method,
+                type = :type,
+                date = NOW(), 
+                amount = :amount,
+                description = :description
+                WHERE incomes.id = :id"
+            );
+            
+            $stmt->execute([
+                ":id" => $id,
+                ":payment_method" => $data["payment_method"],
+                ":type" => $data["type"],
+                ":amount" => $data["amount"],
+                ":description" => $data["description"],
+            ]);
+
+            do {
+                $tbc = readline("Estas seguro de querer hacer estos cambios? (s/n): \n");
+            } while ($tbc != "s" && $tbc != "n");
+
+            if ($tbc === "n"){
+                $this->connection->rollBack();
+                echo("Atualizacion cancelada \n");
+            } else {
+                $this->connection->commit();
+                echo "Se han actualizado los valores";
+            }
+
+        } catch (\Throwable $th) {
+            $this->connection->rollBack();
+            echo "Ha ocurrido un error: " . $th->getMessage() . "\n";
+        }
+    }
 
     public function destroy($id){
-        $this->connection->beginTransaction();
+        try {
+            $this->connection->beginTransaction();
         
-        $stmt = $this->connection->prepare(
-            "DELETE FROM incomes WHERE id=:id"
-        );
-        $stmt->execute([
-            ":id" => $id
-        ]);
+            $stmt = $this->connection->prepare(
+                "DELETE FROM incomes WHERE id=:id"
+            );
+            $stmt->execute([
+                ":id" => $id
+            ]);
 
-        $response = readline("Quieres ejecutar la eliminacion?: s/n ");
-        
-        if ($response == "n") {
+            do {
+                $response = readline("Quieres ejecutar la eliminacion? (s/n): ");
+            } while ($response != "s" && $response != "n");
+            
+            if ($response === "n") {
+                $this->connection->rollBack();
+                echo "Sql no ejecutado \n";
+            } else {
+                $this->connection->commit();
+                echo "Eliminacion confirmada \n";
+
+            }
+        } catch (\Throwable $th) {
             $this->connection->rollBack();
-        } else {
-            $this->connection->commit();
+            echo "Ha ocurrido un error: " . $th->getMessage() . "\n";
         }
+        
     }
 }
 ?>

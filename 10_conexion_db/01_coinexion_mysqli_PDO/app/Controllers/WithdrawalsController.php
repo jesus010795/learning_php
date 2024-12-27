@@ -69,15 +69,91 @@ class WithdrawalsController
         ]);
 
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        print_r($result);
 
+        return $result;
+    }
+    public function destroy($id){
+        try {
+            $this->connection->beginTransaction();
+        $stmt = $this->connection->prepare(
+            "DELETE FROM withdrawals WHERE id=:id"
+        );
+        $stmt->execute([":id" => $id]);
+
+        do {
+            $response = readline("Seguro que quieres eliminar el elemento $id? (s/n): ");
+        } while ($response != "s" && $response != "n");
+
+        if($response === "n"){
+            $this->connection->rollBack();
+            echo "Eliminacion cancelada";
+        } else {
+            $this->connection->commit();
+            echo "Eliminacion confirmada";
+        }
+
+        } catch (\Throwable $th) {
+            echo "Ocurrio un error: " . $th->getMessage();
+        }
+        
+
+    }
+    // mandar el id,
+    //mostrar los valores de la tabla que se pueden editar (columnas)
+    //El ususario escogera la columna a editar
+    //el usuario colocara el nuevo valor
+    //se confirma el cambio
+        //si no se cancela todo
+    //se hace la actualizacion
+    public function update($id){
+        try {
+            $this->connection->beginTransaction();
+            $withdrawal_to_edit = $this->show($id);
+
+            echo "Valores a editar: \n";
+            foreach ($withdrawal_to_edit as $key => $value) {
+                echo "$key \n";
+            }
+            $resp = readline("Escribe el valor a editar:  \n");
+            echo "Antiguo valor: " . $withdrawal_to_edit["$resp"] . "\n";
+            $new_value = readline("Escribe la nueva $resp \n");
+            
+            $stmt = $this->connection->prepare(
+                "UPDATE withdrawals 
+                SET date = NOW(), description = :new_value 
+                WHERE withdrawals.id = :id"
+            );
+
+            $stmt->execute([
+                ":new_value" => $new_value,
+                ":id" => $id
+            ]);
+
+            echo"------------------------\n";
+            echo"Antiguo valor: {$withdrawal_to_edit["$resp"]}\n";
+            echo "Nuevo valor: $new_value \n";
+
+            do {
+                $tbc = readline("Estas seguro de querer hacer estos cambios? (s/n): \n");
+            } while ($tbc != "s" && $tbc != "n");
+
+            if ($tbc === "n"){
+                $this->connection->rollBack();
+                echo("Atualizacion cancelada \n");
+            } else {
+                $this->connection->commit();
+                echo "Se han actualizado los valores";
+            }
+
+        } catch (\Throwable $th) {
+            $this->connection->rollBack();
+            echo "Ha ocurrido un error: " . $th->getMessage() . "\n";
+        }
     }
 }
 
 // public function create(){}
 // public function edit(){}
-// public function update(){}
-// public function destroy(){}
 
 // Los 7 métodos que suelen tener los controladores:
 // index: muestra la lista de todos los recursos.
