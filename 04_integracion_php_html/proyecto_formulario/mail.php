@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 function sendMail($subject, $body, $email, $name, $html = false) {
 
     // Configuración inicial de nuestro servidor de correos
-    $phpmailer = new PHPMailer();
+    $phpmailer = new \PHPMailer();
     $phpmailer->isSMTP();
     $phpmailer->Host = 'smtp.mailtrap.io';
     $phpmailer->SMTPAuth = true;

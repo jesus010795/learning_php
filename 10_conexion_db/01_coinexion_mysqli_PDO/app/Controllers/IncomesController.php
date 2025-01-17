@@ -89,17 +89,17 @@ class IncomesController
                 ":description" => $data["description"],
             ]);
 
-            do {
-                $tbc = readline("Estas seguro de querer hacer estos cambios? (s/n): \n");
-            } while ($tbc != "s" && $tbc != "n");
+            // do {
+            //     $tbc = readline("Estas seguro de querer hacer estos cambios? (s/n): \n");
+            // } while ($tbc != "s" && $tbc != "n");
 
-            if ($tbc === "n"){
-                $this->connection->rollBack();
-                echo("Atualizacion cancelada \n");
-            } else {
-                $this->connection->commit();
-                echo "Se han actualizado los valores";
-            }
+            // if ($tbc === "n"){
+            //     $this->connection->rollBack();
+            //     echo("Atualizacion cancelada \n");
+            // } else {
+            //     $this->connection->commit();
+            //     echo "Se han actualizado los valores";
+            // }
 
         } catch (\Throwable $th) {
             $this->connection->rollBack();

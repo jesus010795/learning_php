@@ -23,8 +23,6 @@ if (isset($_POST["input-form"])) {
         // Logica mandar correo
 
 
-
-
     } else {
         echo "Return false";
     }
