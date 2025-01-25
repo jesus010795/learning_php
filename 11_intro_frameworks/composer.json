@@ -1,0 +1,19 @@
+{
+    "name": "jesus/intro_frameworks",
+    "description": "Proyecto basico",
+    "authors": [
+        {
+            "name": "jesus",
+            "email": "jcd010795@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4":{
+            "App\\": "app/"
+        },
+        "autoload":[
+            "app/helpers.php"
+        ]
+    }
+}
