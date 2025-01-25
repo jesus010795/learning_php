@@ -20,16 +20,16 @@ class IncomesController
             "SELECT * FROM incomes"
         );
         $stmt->execute();
+        $results = $stmt->fetchAll();
 
-        $stmt->bindColumn("amount", $amount);
-        $stmt->bindColumn("description", $description);
+        // var_dump($results);
 
-        while($row = $stmt->fetch()){
-            echo "Ganaste: $amount en $description \n";
-        }
+        require("../resources/views/incomes/index.php");
     }
 
-    public function create(){}
+    public function create(){
+        require("../resources/views/incomes/create.php");
+    }
 
     public function store($data){
 
@@ -38,15 +38,28 @@ class IncomesController
             VALUES (:payment_method, :type, :date, :amount, :description)"
             );
 
-        $stmt->binValue(":payment_method", $data["payment_method"]);    
-        $stmt->binValue(":type", $data["type"]);    
-        $stmt->binValue(":date", $data["date"]);    
-        $stmt->binValue(":amount", $data["amount"]);        
-        $stmt->binValue(":description", $data["description"]);        
-
-        $stmt->execute($data);    
+        // $stmt_data = [
+        //     "payment_method", $data["payment_method"],
+        //     "type", $data["type"],
+        //     "date", $data["date"],
+        //     "amount", $data["amount"],
+        //     "description", $data["description"]
+        // ];
         
+        $date = $data["date"]." ".date("H:i:s");
+
+        $stmt->bindValue(":payment_method", $data["payment_method"]);    
+        $stmt->bindValue(":type", $data["type"]);    
+        $stmt->bindValue(":date", $date);    
+        $stmt->bindValue(":amount", $data["amount"]);        
+        $stmt->bindValue(":description", $data["description"]);        
+
+        $stmt->execute();    
+
+        header("location: incomes");  
+  
     }
+
     public function show($id){
         try {
             $stmt = $this->connection->prepare(
