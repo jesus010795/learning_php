@@ -14,8 +14,8 @@ class Request
         
         $this->setController();
         $this->setMethod();
-        var_dump($this->segments);
-        print_r($this->segments);
+        // var_dump($this->segments);
+        // print_r($this->segments);
     }
 
     public function setController()
@@ -36,7 +36,7 @@ class Request
     public function getController()
     {
         $controller = ucfirst($this->controller);
-        return "App\Http\Controller\\{$controller}Controller";
+        return "App\Http\Controllers\\{$controller}Controller";
     }
 
     public function getMethod()
@@ -48,10 +48,11 @@ class Request
     {
         $controller = $this->getController();
         $method = $this->getMethod();
-        $response = call_user_func(
+        
+        $response = call_user_func([
             new $controller,
-            $method
-        );
+            $method    
+        ]);
 
         $response->send();
     }
